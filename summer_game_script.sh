@@ -57,31 +57,31 @@ Check_system() {
         Get_token
         yum update -y
         judge "更新源"
-        yum install git  wget sed -y
+        yum install git  wget sed gcc g++ make -y
         judge "安装 git wget sed"
     elif [[ "${centos_version}" == "6" ]]; then
         Get_token
         yum update -y
         judge "更新源"
-        yum install git  wget sed -y
+        yum install git  wget sed gcc g++ make -y
         judge "安装 git wget sed"
 	elif [[ "${ID}" == "ubuntu" ]]; then
         Get_token
         apt-get update
         judge "更新源"
-        apt-get install git wget sed -y
+        apt-get install git wget sed gcc g++ make -y
         judge "安装 git wget sed"
 	elif [[ "${ID}" == "raspbian" ]]; then
         Get_token
         apt-get update
         judge "更新源"
-        apt-get install git wget sed -y
+        apt-get install git wget sed gcc g++ make -y
         judge "安装 git wget sed"
     elif [[ "${ID}" == "debian" ]]; then
         Get_token
         apt-get update
         judge "更新源"
-        apt-get install git wget sed -y
+        apt-get install git wget sed gcc g++ make -y
         judge "安装 git wget sed"
 	else
 		echo -e "${Error} ${RedBG} 当前系统为 ${ID} ${VERSION_ID} 不在支持的系统列表内，安装中断 ${Font} "
