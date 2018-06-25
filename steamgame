@@ -25,7 +25,7 @@ judge_summer_game(){
     fi
 }
 
-do_start(){
+do_start1(){
     judge_summer_game
     if [[ $? -eq 0 ]]
     then

@@ -150,11 +150,12 @@ Get_command_to_bin(){
     touch ${SUMMER_GAME_FILES_DIR}/start1.sh
     chmod 777 ${SUMMER_GAME_FILES_DIR}/start1.sh
     cat >> ${SUMMER_GAME_FILES_DIR}/start1.sh <<EOF
-node ${SUMMER_GAME_FILES_DIR}/dist/index.js
+cd ${SUMMER_GAME_FILES_DIR}
+node dist/index.js
 EOF
     touch ${SUMMER_GAME_FILES_DIR}/start2.sh
     chmod 777 ${SUMMER_GAME_FILES_DIR}/start2.sh
-    cat >> ${SUMMER_GAME_FILES_DIR}.sh <<EOF
+    cat >> ${SUMMER_GAME_FILES_DIR}/start2.sh <<EOF
 cd ${SUMMER_GAME_FILES_DIR}
 npm run dev
 EOF
