@@ -159,8 +159,10 @@ EOF
 cd ${SUMMER_GAME_FILES_DIR}
 npm run dev
 EOF
-    curl -o 
-
+    cd /bin
+    wget https://raw.githubusercontent.com/zsnmwy/steam-summer-game-script-2018/master/steamgame
+    judge "下载steamgame"
+    chmod 777 steamgame
 }
 
 Is_root
@@ -174,9 +176,13 @@ echo -e "
 
 记得先登录steamcommunity
 
-脚本有任何问题请到
+脚本有任何问题请到下面的网址反馈
 
-程序有问题请到
+https://github.com/zsnmwy/steam-summer-game-script-2018
+
+程序有问题请到下面的网站反馈
+
+https://github.com/Indexyz/steam_2018_summer_game
 
 按任意键继续
 "

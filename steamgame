@@ -88,6 +88,6 @@ case "$1" in
     start1|start2|remove|status|log|stop)
     do_$1
     ;;
-    *) echo "使用方法 steamgame {start1 | start2 | stop | log | remove | status"
+    *) echo "使用方法 steamgame {start1 | start2 | stop | log | remove | status}"
     ;;
 esac
