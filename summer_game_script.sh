@@ -55,13 +55,13 @@ Check_system() {
     centos_version=$(rpm -q centos-release|cut -d- -f3)
 	if [[ "${ID}" == "centos" ]]; then
         Get_token
-        yum update
+        yum update -y
         judge "更新源"
         yum install git  wget sed -y
         judge "安装 git wget sed"
     elif [[ "${centos_version}" == "6" ]]; then
         Get_token
-        yum update
+        yum update -y
         judge "更新源"
         yum install git  wget sed -y
         judge "安装 git wget sed"
@@ -203,4 +203,5 @@ Install_nvm_node_V10.x_PM2
 install_steam_2018
 Get_command_to_bin
 echo "使用方法 steamgame {start1 | start2 | log | remove | status}"
+cd ~
 bash
