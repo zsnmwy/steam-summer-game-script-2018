@@ -86,7 +86,7 @@ Check_system() {
 Get_token(){
     echo -e "${Info} ${GreenBG} 请到 https://steamcommunity.com/saliengame/gettoken 获取 token ${Font}"
     echo -e "${Info} ${GreenBG} 记得先登录steamcommunity ${Font}"
-	stty erase '^H' && read -p "请输入token：" steam_token
+	read -p "请输入token：" steam_token
 }
 
 Install_nvm_node_V10.x_PM2() {
@@ -186,7 +186,8 @@ https://github.com/Indexyz/steam_2018_summer_game
 
 按任意键继续
 "
-read
+read -p "按任意键继续"
+read -p "按任意键继续"
 
 Check_system #Get token
 Add_hosts_steamcommunity
