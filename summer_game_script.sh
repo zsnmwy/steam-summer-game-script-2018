@@ -107,14 +107,13 @@ Install_nvm_node_V10.x_PM2() {
     judge "使用npm安装pm2"
     npm install -g yarn # This install yarn
     judge "使用npm安装yarn"
-    bash
 }
 
 install_steam_2018(){
     mkdir -p ${SUMMER_GAME_FILES_DIR}
     git clone https://github.com/Indexyz/steam_2018_summer_game.git ${SUMMER_GAME_FILES_DIR}
     judge "clone steam_2018_summer_game"
-    sed 's/YOUR_TOKEN/'"$(echo $steam_token)"'/g' ${SUMMER_GAME_FILES_DIR}/config/default.json
+    cat ${SUMMER_GAME_FILES_DIR}/config/default.json | sed 's/YOUR_TOKEN/'"$(echo $steam_token)"'/g'  > ${SUMMER_GAME_FILES_DIR}/config/default.json
     judge "修改token"
     cd ${SUMMER_GAME_FILES_DIR}
     yarn
@@ -123,7 +122,6 @@ install_steam_2018(){
 
 Get_steamcommunity_ip() {
 	curl 'https://cloudflare-dns.com/dns-query?ct=application/dns-json&name=steamcommunity.com&type=A' | cut -d '"' -f34
-    judge "获取steamcommunityIP"
 }
 
 Add_hosts_steamcommunity() {
@@ -196,3 +194,4 @@ Add_hosts_steamcommunity
 Install_nvm_node_V10.x_PM2
 install_steam_2018
 Get_command_to_bin
+bash

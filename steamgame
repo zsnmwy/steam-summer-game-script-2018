@@ -17,7 +17,7 @@ judge(){
 
 judge_summer_game(){
     summer_game_id=$(pm2 ls | grep steamgame)
-    if -n ${summer_game_id}
+    if [[ -n ${summer_game_id} ]]
     then
         return 0
     else
@@ -27,7 +27,7 @@ judge_summer_game(){
 
 do_start(){
     judge_summer_game
-    if $? -eq 0
+    if [[ $? -eq 0 ]]
     then
         echo "summer game 已经存在了！！ 本次操作跳过~~"
         exit 1
@@ -38,7 +38,7 @@ do_start(){
 
 do_start2(){
     judge_summer_game
-    if $? -eq 0
+    if [[ $? -eq 0 ]]
     then
         echo "summer game 已经存在了！！ 本次操作跳过~~"
         exit 1
@@ -49,7 +49,7 @@ do_start2(){
 
 do_stop(){
     judge_summer_game
-    if $? -eq 1
+    if [[ $? -eq 1 ]]
     then
         echo "summer game 还没有启动哟 本次操作跳过~~"
         exit 1
@@ -60,7 +60,7 @@ do_stop(){
 
 do_status(){
     judge_summer_game
-    if $? -eq 1
+    if [[ $? -eq 1 ]]
     then
         echo "summer game 还没有启动哟 本次操作跳过~~"
         exit 1
@@ -71,7 +71,7 @@ do_status(){
 
 do_remove(){
     judge_summer_game
-    if $? -eq 1
+    if [[ $? -eq 1 ]]
     then
         echo "summer game 还没有启动哟 本次操作跳过~~"
         exit 1
@@ -82,7 +82,7 @@ do_remove(){
 
 do_log(){
     judge_summer_game
-    if $? -eq 1
+    if [[ $? -eq 1 ]]
     then
         echo "summer game 还没有启动哟 本次操作跳过~~"
         exit 1
