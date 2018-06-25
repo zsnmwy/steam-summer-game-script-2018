@@ -52,7 +52,14 @@ judge(){
 Check_system() {
 	echo -e "${ID}"
 	echo -e "${VERSION_ID}"
+    centos_version=$(rpm -q centos-release|cut -d- -f3)
 	if [[ "${ID}" == "centos" ]]; then
+        Get_token
+        yum update
+        judge "更新源"
+        yum install git  wget sed -y
+        judge "安装 git wget sed"
+    elif [[ "${centos_version}" == "6" ]]; then
         Get_token
         yum update
         judge "更新源"
