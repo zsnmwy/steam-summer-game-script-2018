@@ -202,4 +202,5 @@ Add_hosts_steamcommunity
 Install_nvm_node_V10.x_PM2
 install_steam_2018
 Get_command_to_bin
+echo "使用方法 steamgame {start1 | start2 | log | remove | status}"
 bash

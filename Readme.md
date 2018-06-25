@@ -10,5 +10,29 @@
 
 1. 文件将会安装到`/opt/summer_game`
 
+## 安装
+
+```shell
+wget --no-check-certificate  -O summer_game_script.sh https://raw.githubusercontent.com/zsnmwy/steam-summer-game-script-2018/master/summer_game_script.sh && bash summer_game_script.sh
+```
+
 ## 使用方法
 
+steamgame
+    -start1 启动方式: `node index.js`
+
+    -start2 启动方式: `npm run dev`
+
+    -log 查看`steamgame`日志
+
+    -remove 从PM2移除`steamgame`
+
+    -status 查看`steamgame`的状态
+
+```shell
+e.g.
+
+查看日志
+
+steamgame log
+```
