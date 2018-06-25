@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+#Author:zsnmwy
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin:/opt/ArchiSteamFarm:/opt/Manage_ArchiSteamFarm:/root/.nvm/versions/node/v10.5.0/bin
+export PATH
+
+DIR_PATH="/opt/summer_game"
+
+judge(){
+	if [[ $? -eq 0 ]];then
+		echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
+	else
+		echo -e "${Error} ${RedBG} $1 失败${Font}"
+		exit 1
+	fi
+}
+
+judge_summer_game(){
+    summer_game_id=$(pm2 ls | grep steamgame)
+    if -n ${summer_game}
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+
+do_start(){
+    if judge_summer_game -eq 0 
+    then
+       echo "summer game 已经存在了！！ 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 start ${DIR_PATH}/start1.sh -n steamgame
+    judge "启动方式: node index.js"
+}
+
+do_start2(){
+    if judge_summer_game -eq 0 
+    then
+       echo "summer game 已经存在了！！ 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 start ${DIR_PATH}/start2.sh -n steamgame
+    judge "启动方式: npm run dev"
+}
+
+do_stop(){
+    if judge_summer_game -eq 1
+    then
+       echo "summer game 还没有启动哟 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 stop steamgame
+    judge "移除steamgame"
+}
+
+do_status(){
+    if judge_summer_game -eq 1
+    then
+       echo "summer game 还没有启动哟 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 ls
+    judge "列出PM2任务"
+}
+
+do_remove(){
+    if judge_summer_game -eq 1
+    then
+       echo "summer game 还没有启动哟 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 delete steamgame
+    judge "删除steamgame"
+}
+
+do_log(){
+    if judge_summer_game -eq 1
+    then
+       echo "summer game 还没有启动哟 本次操作跳过~~" 
+       exit 1
+    fi
+    pm2 log steamgame
+    judge "查看steamgame日志"
+}
+case "$1" in
+    start1|start2|remove|status|log|stop)
+    do_$1
+    ;;
+    *) echo "使用方法 steamgame {start1 | start2 | stop | log | remove | status"
+    ;;
+esac
