@@ -57,13 +57,13 @@ Check_system() {
         Get_token
         yum update -y
         judge "更新源"
-        yum install git  wget sed gcc g++ make curl -y
+        yum install git  wget sed gcc make curl gcc-c++ openssl-devel -y
         judge "安装 git wget sed"
     elif [[ "${centos_version}" == "6" ]]; then
         Get_token
         yum update -y
         judge "更新源"
-        yum install git  wget sed gcc g++ make curl -y
+        yum install git  wget sed gcc make curl gcc-c++ openssl-devel -y
         judge "安装 git wget sed"
 	elif [[ "${ID}" == "ubuntu" ]]; then
         Get_token
