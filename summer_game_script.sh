@@ -140,14 +140,14 @@ Add_hosts_steamcommunity() {
 IPAddress steamcommunity.com
 EOF
 		echo -e "${Info} ${GreenBG} 使用sed修改hosts ${Font}"
-		cat /etc/hosts | sed 's#IPAddress#'"$(echo $(Get_steamcommunity_ip))"'#g' > /etc/hosts
-        judge "增加steamcommunity IP"
+		sed -i -e 's#IPAddress#'"$(echo $(Get_steamcommunity_ip))"'#g' /etc/hosts
+        judge "修改steamcommunity IP"
 		ip_address=$(cat /etc/hosts | grep steamcommunity.com)
 		echo -e "${Info} ${GreenBG} ${ip_address} ${Font}"
 	else
 		get_ip=$(cat /etc/hosts | grep steamcommunity.com | cut -d ' ' -f 1)
 		echo "${get_ip}"
-		cat /etc/hosts | sed 's#'"$(echo ${get_ip})"'#'"$(echo $(Get_steamcommunity_ip))"'#' > /etc/hosts
+		sed -i -e 's#'"$(echo ${get_ip})"'#'"$(echo $(Get_steamcommunity_ip))"'#' /etc/hosts
         judge "修改steamcommunity IP"
 		echo "已经更新hosts"
 		cat /etc/hosts | grep steamcommunity.com

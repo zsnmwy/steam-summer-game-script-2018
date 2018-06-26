@@ -19,7 +19,7 @@ wget --no-check-certificate  -O summer_game_script.sh https://raw.githubusercont
 ## 使用方法
 
 ```shell
-使用方法
+使用方法 
 
 steamgame
 
