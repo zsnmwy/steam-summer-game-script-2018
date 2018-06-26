@@ -25,7 +25,7 @@ judge_summer_game(){
     fi
 }
 
-do_start1(){
+start1(){
     judge_summer_game
     if [[ $? -eq 0 ]]
     then
@@ -36,7 +36,7 @@ do_start1(){
     judge "启动方式: node index.js"
 }
 
-do_start2(){
+start2(){
     judge_summer_game
     if [[ $? -eq 0 ]]
     then
@@ -47,7 +47,7 @@ do_start2(){
     judge "启动方式: npm run dev"
 }
 
-do_stop(){
+stop(){
     judge_summer_game
     if [[ $? -eq 1 ]]
     then
@@ -58,7 +58,7 @@ do_stop(){
     judge "移除steamgame"
 }
 
-do_status(){
+status(){
     judge_summer_game
     if [[ $? -eq 1 ]]
     then
@@ -69,7 +69,7 @@ do_status(){
     judge "列出PM2任务"
 }
 
-do_remove(){
+remove(){
     judge_summer_game
     if [[ $? -eq 1 ]]
     then
@@ -80,7 +80,7 @@ do_remove(){
     judge "删除steamgame"
 }
 
-do_log(){
+log(){
     judge_summer_game
     if [[ $? -eq 1 ]]
     then
@@ -91,8 +91,20 @@ do_log(){
     judge "查看steamgame日志"
 }
 case "$1" in
-    start1|start2|remove|status|log)
-        do_$1
+    -s1|--start1)
+    start1
+    ;;
+    -s2|--start2)
+    start2
+    ;;
+    -l|--log)
+    log
+    ;;
+    -r|--remove)
+    remove
+    ;;
+    -st|--status)
+    status
     ;;
     *) echo "使用方法 steamgame {start1 | start2 | log | remove | status}"
     ;;
