@@ -195,8 +195,8 @@ https://github.com/Indexyz/steam_2018_summer_game
 "
 read -p "按任意键继续"
 
-rm -rf ${SUMMER_GAME_FILES_DIR}
-rm -r /bin/steamgame
+rm -rf ${SUMMER_GAME_FILES_DIR} >/dev/null 2>&1
+rm -r /bin/steamgame >/dev/null 2>&1
 
 Check_system #Get token
 Add_hosts_steamcommunity
