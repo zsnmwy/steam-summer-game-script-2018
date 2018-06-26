@@ -36,7 +36,7 @@ e.g.
 
 查看日志
 
-steamgame log
+steamgame --log
 
 或
 
