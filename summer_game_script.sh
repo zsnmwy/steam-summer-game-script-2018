@@ -87,7 +87,17 @@ Check_system() {
 Get_token(){
     echo -e "${Info} ${GreenBG} 请到 https://steamcommunity.com/saliengame/gettoken 获取 token ${Font}"
     echo -e "${Info} ${GreenBG} 记得先登录steamcommunity ${Font}"
-	read -p "请输入token：" steam_token
+    while true 
+    do
+        read -p "请输入token:" steam_token
+        read -p "再次输入token进行二次验证 " steam_token2
+        if [[ $steam_token != $steam_token2 ]]
+        then
+        echo "两次输入的token不一样 请再次输入"
+        else
+        break
+        fi
+    done
 }
 
 Install_nvm_node_V10.x_PM2() {
