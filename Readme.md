@@ -19,16 +19,16 @@ wget --no-check-certificate  -O summer_game_script.sh https://raw.githubusercont
 ## 使用方法
 
 ```shell
+使用方法 
+
 steamgame
-    -start1 启动方式: node index.js
 
-    -start2 启动方式: npm run dev
+    --start1      | -s1   启动方式: node index.js
+    --start2      | -s2   启动方式: npm run dev
+    --log         | -l    查看挂游戏的日志
+    --remove      | -r    移除挂游戏的任务
+    --status      | -st   查看挂游戏的状态
 
-    -log 查看steamgame日志
-
-    -remove 从PM2移除steamgame
-
-    -status 查看steamgame的状态
 ```
 
 ```shell
@@ -37,4 +37,8 @@ e.g.
 查看日志
 
 steamgame log
+
+或
+
+steamgame -l
 ```

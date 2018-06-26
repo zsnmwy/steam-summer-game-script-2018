@@ -106,6 +106,7 @@ Install_nvm_node_V10.x_PM2() {
 	echo -e "${Info} ${GreenBG} node安装阶段 ${Font}"
 	nvm install 10.5.0 # This install node v10.x
     judge "安装node 10.x"
+    nvm use 10.5.0
 	node -v            # Show node version
 	#npm i -g nrm                                                       # Use npm install nrm
 	#nrm use taobao                                                     # Registry set to: https://registry.npm.taobao.org/
