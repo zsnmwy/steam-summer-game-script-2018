@@ -71,12 +71,6 @@ Check_system() {
         judge "更新源"
         apt-get install git wget sed gcc g++ make curl -y
         judge "安装 git wget sed"
-	elif [[ "${ID}" == "raspbian" ]]; then
-        Get_token
-        apt-get update
-        judge "更新源"
-        apt-get install git wget sed gcc g++ make curl -y
-        judge "安装 git wget sed"
     elif [[ "${ID}" == "debian" ]]; then
         Get_token
         apt-get update
@@ -141,7 +135,7 @@ IPAddress steamcommunity.com
 EOF
 		echo -e "${Info} ${GreenBG} 使用sed修改hosts ${Font}"
 		sed -i -e 's#IPAddress#'"$(echo $(Get_steamcommunity_ip))"'#g' /etc/hosts
-        judge "修改steamcommunity IP"
+        judge "增加steamcommunity IP"
 		ip_address=$(cat /etc/hosts | grep steamcommunity.com)
 		echo -e "${Info} ${GreenBG} ${ip_address} ${Font}"
 	else
