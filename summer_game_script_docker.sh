@@ -180,7 +180,7 @@ Get_command_to_bin(){
     touch ${SUMMER_GAME_FILES_DIR}/start.sh
     chmod 777 ${SUMMER_GAME_FILES_DIR}/start.sh
     cat >> ${SUMMER_GAME_FILES_DIR}/start.sh <<EOF
-docker run -it --init --rm -e TOKEN=${steam_token} steamdb/saliencheat
+docker run -i --init --rm -e TOKEN=${steam_token} steamdb/saliencheat
 EOF
     cd /bin
     wget https://raw.githubusercontent.com/zsnmwy/steam-summer-game-script-2018/master/steamgame-docker
