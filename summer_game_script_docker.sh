@@ -207,7 +207,7 @@ https://github.com/zsnmwy/steam-summer-game-script-2018
 
 https://github.com/SteamDatabase/SalienCheat
 
-Version PR1.0
+Version 1.0
 "
 read -p "按任意键继续"
 
@@ -225,7 +225,7 @@ echo "
 
 steamgame-docker
 
-    --start       | -s   启动挂游戏
+    --start       | -s    启动挂游戏
     --log         | -l    查看挂游戏的日志
     --remove      | -r    移除挂游戏的任务
     --status      | -st   查看挂游戏的状态
