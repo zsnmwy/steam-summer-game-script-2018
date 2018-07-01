@@ -158,6 +158,8 @@ Check_install_docker(){
         echo "还没有安装Docker 进行安装"
         curl -fsSL https://get.docker.com/ | sh
         judge "安装Docker"
+        service docker start
+        judge "启动Docker服务"
     fi
 }
 
@@ -205,7 +207,7 @@ https://github.com/zsnmwy/steam-summer-game-script-2018
 
 https://github.com/SteamDatabase/SalienCheat
 
-Version PR
+Version PR1.0
 "
 read -p "按任意键继续"
 
