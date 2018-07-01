@@ -158,8 +158,6 @@ Check_install_docker(){
         echo "还没有安装Docker 进行安装"
         curl -fsSL https://get.docker.com/ | sh
         judge "安装Docker"
-        service docker start
-        judge "启动Docker服务"
     fi
 }
 
@@ -172,6 +170,8 @@ Install_SalienCheat(){
     judge "解压 master.zip"
     mv SalienCheat-master/* ${SUMMER_GAME_FILES_DIR}
     judge "移动 SalienCheat"
+    service docker start
+    judge "启动Docker服务"
     docker build . -t steamdb/saliencheat
     judge "初始化 SalienCheat"
 }
