@@ -45,6 +45,8 @@ judge(){
 		sleep 1
 	else
 		echo -e "${Error} ${RedBG} $1 失败${Font}"
+        rm -rf ${SUMMER_GAME_FILES_DIR} >/dev/null 2>&1
+        rm -r /bin/steamgame-docker >/dev/null 2>&1
 		exit 1
 	fi
 }
@@ -203,6 +205,7 @@ https://github.com/zsnmwy/steam-summer-game-script-2018
 
 https://github.com/SteamDatabase/SalienCheat
 
+Version PR
 "
 read -p "按任意键继续"
 
@@ -211,6 +214,7 @@ rm -r /bin/steamgame-docker >/dev/null 2>&1
 
 Check_system #Get token
 Install_nvm_node_V10.x_PM2
+Check_install_docker
 Install_SalienCheat
 Get_command_to_bin
 
