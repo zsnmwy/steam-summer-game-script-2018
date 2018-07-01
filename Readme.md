@@ -37,6 +37,13 @@ steamgame
     --log         | -l    查看挂游戏的日志
     --remove      | -r    移除挂游戏的任务
     --status      | -st   查看挂游戏的状态
+    
+steamgame-docker
+
+    --start       | -s    启动挂游戏
+    --log         | -l    查看挂游戏的日志
+    --remove      | -r    移除挂游戏的任务
+    --status      | -st   查看挂游戏的状态
 
 ```
 
