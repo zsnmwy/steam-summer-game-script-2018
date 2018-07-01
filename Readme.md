@@ -2,6 +2,8 @@
 
 本脚本是基于[steam_2018_summer_game](https://github.com/Indexyz/steam_2018_summer_game)的二次开发。
 
+其中docker版本启动的，是基于[SalienCheat](https://github.com/SteamDatabase/SalienCheat)的二次开发。支持BOSS模式。
+
 可以更加方便地挂游戏。
 
 1. 会安装`nvm`并安装`node v10.5.0`
@@ -12,8 +14,15 @@
 
 ## 安装
 
+基于`steam_2018_summer_game`
+
 ```shell
 wget --no-check-certificate  -O summer_game_script.sh https://raw.githubusercontent.com/zsnmwy/steam-summer-game-script-2018/master/summer_game_script.sh && bash summer_game_script.sh
+```
+基于`SalienCheat`
+
+```shell
+wget --no-check-certificate  -O summer_game_script_docker.sh https://raw.githubusercontent.com/zsnmwy/steam-summer-game-script-2018/master/summer_game_script_docker.sh && bash summer_game_script_docker.sh
 ```
 
 ## 使用方法
